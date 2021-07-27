@@ -29,4 +29,9 @@ public class WorkJourneyController {
         return journeyService.getById(idJourney).orElseThrow(() -> new Exception("Jornada não encontrada."));
     }
 
+    @PutMapping
+    public WorkingJourney updateJourney (@RequestBody WorkingJourney workingJourney) {
+        return journeyService.updateJourney(workingJourney);
+    }
+
 }

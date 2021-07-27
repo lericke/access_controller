@@ -1,6 +1,5 @@
 package com.araujo.erick.controleacesso.swagger;
 
-import java.util.Collections;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -18,12 +17,12 @@ import java.util.Collections;
 
 @Configuration
 @EnableSwagger2
-public class SwaggerCongig {
+public class SwaggerConfig {
     @Bean
     public Docket apiAdmin() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.dio.live"))
+                .apis(RequestHandlerSelectors.basePackage("com.araujo.project"))
                 .paths(PathSelectors.ant("/**"))
                 .build()
                 .apiInfo(apiInfo())
@@ -42,11 +41,11 @@ public class SwaggerCongig {
     public ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("API-REST")
-                .description(" super live code")
+                .description(" Api de controle de acesso. ")
                 .version("1.0.0")
                 .license("Apache License Version 2.0")
                 .licenseUrl("https://www.apache.org/licenses/LICENSE-2.0")
-                .contact(new Contact("DIO", "https://web.digitalinnovation.one", "araujo.lericke@gmail.com"))
+                .contact(new Contact("ERICK", "https://github.com/lericke", "araujo.lericke@gmail.com"))
                 .build();
     }
 }
